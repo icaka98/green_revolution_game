@@ -16,6 +16,8 @@ class Resource:
     tick: int = 0
     activated: bool = False
     dead: bool = False
+    score: int = 0
+    e_type_value: int = 0
 
 
 @dataclass
@@ -61,6 +63,6 @@ def read_data(input_name: str) -> tuple[int, int, int, dict[int, Resource], list
     return D, R, T, resources, turns
 
 
-def write_output(output: list[str], input_name: str) -> None:
-    with open(os.path.join("output", f"{input_name}.txt"), "w+") as file:
-        file.write("\n".join(output))
+def write_output(output: str, input_name: str) -> None:
+    with open(os.path.join("output", f"{input_name}-3.txt"), "w+") as file:
+        file.write(output)
